@@ -1,0 +1,73 @@
+.about {
+    &_header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8rem 0;
+        background-color: rgba($color-primary, 0.45);
+    }
+
+    &_info {
+        margin-top: 4rem;
+    }
+
+    &_team {
+        margin-top: 4rem;
+        margin-bottom: 6rem;
+    }
+
+    &_heading {
+        font-size: 4.2rem;
+        color: $color-white;
+        font-weight: 200;
+    }
+
+    &_subheading {
+        font-size: 3.2rem;
+        color: $color-primary;
+        font-weight: 200;
+        margin-bottom: 2rem;
+    }
+
+    &_paragraph {
+        font-size: 1.6rem;
+        color: $color-paragraph;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &_display {
+        width: 100%;
+
+        &_image {
+            width: 100%;
+        }
+    }
+
+    &_realtor {
+        font-size: 1.8rem;
+        font-weight: 200;
+        color: $color-primary;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &_topseller {
+        font-size: 2.4rem;
+        color: $color-paragraph;
+        font-weight: 200;
+        margin-top: 2rem;
+    }
+
+    &_contact {
+        font-size: 1.6rem;
+        color: $color-tertiary;
+        margin-bottom: 0.5rem;
+    }
+
+    &_about {
+        font-size: 1.6rem;
+        color: $color-paragraph;
+        margin-top: 1rem;
+    }
+}
