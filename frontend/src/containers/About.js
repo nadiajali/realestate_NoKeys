@@ -6,6 +6,15 @@ import House from "../assets/images/house.jpg";
 const About = () => {
   const [topSeller, setTopSeller] = useState([]);
   const [realtors, setRealtors] = useState([]);
+  const [host, setHost] = useState("");
+
+  if (process.env.NODE_ENV === "production") {
+    // Production Code
+    setHost("https://nadiajali-realestate.herokuapp.com");
+  } else {
+    // Development Code
+    setHost("http://localhost:8080");
+  }
 
   useEffect(() => {
     axios.defaults.headers = {
@@ -14,8 +23,7 @@ const About = () => {
 
     const getTopSeller = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:8080/api/realtors/topseller"
+        const res = await axios.get(host + "/api/realtors/topseller"
         );
         setTopSeller(res.data);
       } catch (err) {}
@@ -30,7 +38,7 @@ const About = () => {
 
     const getRealtors = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/realtors/");
+        const res = await axios.get(host + "/api/realtors/");
         setRealtors(res.data);
       } catch (err) {}
     };
