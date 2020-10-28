@@ -6,7 +6,7 @@ import House from "../assets/images/house.jpg";
 const About = () => {
   const [topSeller, setTopSeller] = useState([]);
   const [realtors, setRealtors] = useState([]);
-  /*
+  
   const [host, setHost] = useState("");
 
   if (process.env.NODE_ENV === "production") {
@@ -18,7 +18,6 @@ const About = () => {
     setHost("http://localhost:8080");
     console.log("************ NODE_ENV = NOT PRODUCTION ************");
   }
-  */
 
   useEffect(() => {
     axios.defaults.headers = {
