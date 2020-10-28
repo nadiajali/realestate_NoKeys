@@ -27,7 +27,7 @@ const About = () => {
 
     const getTopSeller = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/realtors/topseller"
+        const res = await axios.get("https://nadiajali-realestate.herokuapp.com/api/realtors/topseller"
         );
         setTopSeller(res.data);
       } catch (err) {}
