@@ -40,9 +40,11 @@ const ListingForm = (props) => {
   if (process.env.NODE_ENV === "production") {
     // Production Code
     setHost("https://nadiajali-realestate.herokuapp.com");
+    console.log("************ NODE_ENV = PRODUCTION ************");
   } else {
     // Development Code
     setHost("http://localhost:8080");
+    console.log("************ NODE_ENV = NOT PRODUCTION ************");
   }
 
   const onSubmit = (e) => {
