@@ -19,7 +19,9 @@ const About = () => {
       setHost("http://localhost:8080");
       console.log("************ NODE_ENV = NOT PRODUCTION ************");
     }
+  });
 
+  useEffect(() => {
     axios.defaults.headers = {
       "Content-Type": "application/json",
     };
