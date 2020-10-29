@@ -11,14 +11,25 @@ const Listings = () => {
   const [next, setNext] = useState("");
   const [active, setActive] = useState(1);
 
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      // Production Code
+      setHost("https://nadiajali-realestate.herokuapp.com");
+      console.log("NODE_ENV = PRODUCTION");
+    } else {
+      // Development Code
+      setHost("http://localhost:8080");
+      console.log("NODE_ENV = NOT PRODUCTION");
+    }
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:8080/api/listings/?page=1"
-        );
+        const res = await axios.get(host + "/api/listings/?page=1");
 
         setListings(res.data.results);
         setCount(res.data.count);

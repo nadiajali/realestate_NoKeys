@@ -9,6 +9,19 @@ import {
 } from "./types";
 
 export const login = (email, password) => async (dispatch) => {
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      // Production Code
+      setHost("https://nadiajali-realestate.herokuapp.com");
+      console.log("NODE_ENV = PRODUCTION");
+    } else {
+      // Development Code
+      setHost("http://localhost:8080");
+      console.log("NODE_ENV = NOT PRODUCTION");
+    }
+  });
+
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -18,11 +31,7 @@ export const login = (email, password) => async (dispatch) => {
   const body = JSON.stringify({ email, password });
 
   try {
-    const res = await axios.post(
-      "http://localhost:8080/api/token/",
-      body,
-      config
-    );
+    const res = await axios.post(host + "/api/token/", body, config);
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -42,6 +51,19 @@ export const login = (email, password) => async (dispatch) => {
 export const signup = ({ name, email, password, password2 }) => async (
   dispatch
 ) => {
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      // Production Code
+      setHost("https://nadiajali-realestate.herokuapp.com");
+      console.log("NODE_ENV = PRODUCTION");
+    } else {
+      // Development Code
+      setHost("http://localhost:8080");
+      console.log("NODE_ENV = NOT PRODUCTION");
+    }
+  });
+
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -51,11 +73,7 @@ export const signup = ({ name, email, password, password2 }) => async (
   const body = JSON.stringify({ name, email, password, password2 });
 
   try {
-    const res = await axios.post(
-      "http://localhost:8080/api/accounts/signup",
-      body,
-      config
-    );
+    const res = await axios.post(host + "/api/accounts/signup", body, config);
 
     dispatch({
       type: SIGNUP_SUCCESS,

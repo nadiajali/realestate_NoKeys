@@ -32,6 +32,19 @@ const ListingForm = (props) => {
 
   const [loading, setLoading] = useState(false);
 
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      // Production Code
+      setHost("https://nadiajali-realestate.herokuapp.com");
+      console.log("NODE_ENV = PRODUCTION");
+    } else {
+      // Development Code
+      setHost("http://localhost:8080");
+      console.log("NODE_ENV = NOT PRODUCTION");
+    }
+  });
+
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -42,7 +55,7 @@ const ListingForm = (props) => {
 
     setLoading(true);
     axios
-      .post("http://localhost:8080/api/listings/search", {
+      .post(host + "/api/listings/search", {
         sale_type,
         price,
         bedrooms,

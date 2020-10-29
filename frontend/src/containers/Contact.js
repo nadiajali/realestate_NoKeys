@@ -7,6 +7,19 @@ import Loader from "react-loader-spinner";
 import PropTypes from "prop-types";
 
 const Contact = ({ setAlert }) => {
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      // Production Code
+      setHost("https://nadiajali-realestate.herokuapp.com");
+      console.log("NODE_ENV = PRODUCTION");
+    } else {
+      // Development Code
+      setHost("http://localhost:8080");
+      console.log("NODE_ENV = NOT PRODUCTION");
+    }
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -32,7 +45,7 @@ const Contact = ({ setAlert }) => {
 
     setLoading(true);
     axios
-      .post("http://localhost:8080/api/contacts/", {
+      .post(host + "/api/contacts/", {
         name,
         email,
         subject,

@@ -8,16 +8,15 @@ const About = () => {
   const [realtors, setRealtors] = useState([]);
 
   const [host, setHost] = useState("");
-
   useEffect(() => {
     if (process.env.NODE_ENV === "production") {
       // Production Code
       setHost("https://nadiajali-realestate.herokuapp.com");
-      console.log("************ NODE_ENV = PRODUCTION ************");
+      console.log("NODE_ENV = PRODUCTION");
     } else {
       // Development Code
       setHost("http://localhost:8080");
-      console.log("************ NODE_ENV = NOT PRODUCTION ************");
+      console.log("NODE_ENV = NOT PRODUCTION");
     }
   });
 

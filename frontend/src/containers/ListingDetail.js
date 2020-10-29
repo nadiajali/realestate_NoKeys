@@ -8,6 +8,19 @@ const ListingDetail = (props) => {
   const [realtor, setRealtor] = useState({});
   const [price, setPrice] = useState(0);
 
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      // Production Code
+      setHost("https://nadiajali-realestate.herokuapp.com");
+      console.log("NODE_ENV = PRODUCTION");
+    } else {
+      // Development Code
+      setHost("http://localhost:8080");
+      console.log("NODE_ENV = NOT PRODUCTION");
+    }
+  });
+
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
