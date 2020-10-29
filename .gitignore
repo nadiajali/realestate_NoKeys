@@ -10,9 +10,10 @@ __pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
-media
+images
 venv
 settings_local.py
+images-NOT_BACKEND
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
@@ -165,7 +166,4 @@ bower_components
 psd
 thumb
 sketch
-
-images-NOT_BACKEND
-
 # End of https://www.toptal.com/developers/gitignore/api/django,react
