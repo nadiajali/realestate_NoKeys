@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'realtors',
     'listings',
-    'contacts'
+    'contacts',
     'storages'
 ]
 
