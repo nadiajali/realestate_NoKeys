@@ -100,8 +100,8 @@ DATABASES = {'default': dj_database_url.config()}
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'nadiajali6@gmail.com'
-EMAIL_HOST_PASSWORD = 'ipgabvvkogmsedgv'
+EMAIL_HOST_USER = 'nadianjali0@gmail.com'
+EMAIL_HOST_PASSWORD = 'gdruopbktcvaboky'
 EMAIL_USE_TLS = True
 
 # Password validation
