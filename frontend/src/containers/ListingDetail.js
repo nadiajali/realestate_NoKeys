@@ -331,9 +331,11 @@ const ListingDetail = (props) => {
       </Helmet>
       <div className="listingdetail_header">
         <h1 className="listingdetail_title">{listing.title}</h1>
+        {/*
         <p className="listingdetail_location">
           {listing.city} {listing.state}, {listing.zipcode}
         </p>
+        */}
       </div>
       <div className="row">
         <div className="listingdetail_breadcrumb">
