@@ -35,7 +35,7 @@ const ListingDetail = (props) => {
     };
 
     axios
-      .get(`http://localhost:8080/api/listings/${slug}`, config)
+      .get(`${host}/api/listings/${slug}`, config)
       .then((res) => {
         setListing(res.data);
         setPrice(numberWithCommas(res.data.price));
@@ -54,7 +54,7 @@ const ListingDetail = (props) => {
 
     if (id) {
       axios
-        .get(`http://localhost:8080/api/realtors/${id}`, config)
+        .get(`${host}/api/realtors/${id}`, config)
         .then((res) => {
           setRealtor(res.data);
         })
