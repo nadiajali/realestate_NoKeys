@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -7,6 +7,19 @@ import { signup } from "../actions/auth";
 import PropTypes from "prop-types";
 
 const SignUp = ({ setAlert, signup, isAuthenticated }) => {
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      // Production Code
+      setHost("https://nadiajali-realestate.herokuapp.com");
+      console.log("NODE_ENV = PRODUCTION");
+    } else {
+      // Development Code
+      setHost("http://localhost:8080");
+      console.log("NODE_ENV = NOT PRODUCTION");
+    }
+  });
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,7 +36,7 @@ const SignUp = ({ setAlert, signup, isAuthenticated }) => {
     e.preventDefault();
 
     if (password != password2) setAlert("Passwords do not match.", "error");
-    else signup({ name, email, password, password2 });
+    else signup({ name, email, password, password2, host });
   };
 
   if (isAuthenticated) return <Redirect to="/" />;

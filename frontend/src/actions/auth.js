@@ -49,22 +49,9 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
-export const signup = ({ name, email, password, password2 }) => async (
+export const signup = ({ name, email, password, password2, host }) => async (
   dispatch
 ) => {
-  const [host, setHost] = useState("");
-  useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      // Production Code
-      setHost("https://nadiajali-realestate.herokuapp.com");
-      console.log("NODE_ENV = PRODUCTION");
-    } else {
-      // Development Code
-      setHost("http://localhost:8080");
-      console.log("NODE_ENV = NOT PRODUCTION");
-    }
-  });
-
   const config = {
     headers: {
       "Content-Type": "application/json",
