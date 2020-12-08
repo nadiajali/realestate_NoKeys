@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%+!bvrvah=@8yn^_rz$l5!fd79en81q-fngfpzz0n$ucsnz=^i'
+SECRET_KEY = [REMOVED]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -91,8 +91,8 @@ DATABASES = {'default': dj_database_url.config()}
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'realestate',
-#         'USER': 'postgres',
-#         'PASSWORD': 'password',
+#         'USER': [REMOVED],
+#         'PASSWORD': [REMOVED],
 #         'HOST': 'localhost',
 #     }
 # }
@@ -100,8 +100,8 @@ DATABASES = {'default': dj_database_url.config()}
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'nadianjali0@gmail.com'
-EMAIL_HOST_PASSWORD = 'gdruopbktcvaboky'
+EMAIL_HOST_USER = [REMOVED]
+EMAIL_HOST_PASSWORD = [REMOVED]
 EMAIL_USE_TLS = True
 
 # Password validation
