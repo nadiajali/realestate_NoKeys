@@ -1,7 +1,3 @@
-Django Admin Superuser
-admin@gmail.com
-password
-
-Login
+Sample Login:
 bobsmith@gmail.com
 password
